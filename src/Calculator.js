@@ -92,7 +92,7 @@ render() {
             <div className="number-inputs">
                 <input type="text" value={this.state.text} disabled />
                 <button
-                onPress={(event) => {
+                onClick={(event) => {
                 let newText = this.state.text.substring(
                   0,
                   this.state.text.length - 1,
