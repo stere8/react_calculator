@@ -38,7 +38,13 @@ class Calculator extends Component {
         let operation = event.target.value
          let numz = this.state.nums
          let ops = this.state.op
-         numz.push(this.state.text)
+         if (this.state.res !== '') {
+          numz.push(this.state.res);
+        } else if (this.state.text !== '') {
+          numz.push(this.state.text);
+        } else if (this.state.res === '' && this.state.res === '') {
+          numz.push('0');
+        }
          ops.push(operation)
           this.setState({
               nums : numz,
@@ -67,11 +73,6 @@ class Calculator extends Component {
                  op : [],
              }
          )
-         console.log(this.state.text)
-         console.log(this.state.res)
-         console.log(this.state.nums)
-         console.log(this.state.op)
-
     }
     eraseAll = () =>{
         this.setState({
@@ -80,10 +81,6 @@ class Calculator extends Component {
             text : '',
             res : ''
         })
-        console.log(this.state.text)
-        console.log(this.state.res)
-        console.log(this.state.nums)
-        console.log(this.state.op)
     }
 render() {
 
