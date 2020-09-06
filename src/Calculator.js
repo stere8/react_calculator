@@ -91,7 +91,16 @@ render() {
             <h2 style={{color : '#690000', fontSize : '100px'}}>{this.state.res}</h2>
             <div className="number-inputs">
                 <input type="text" value={this.state.text} disabled />
-                <button>
+                <button
+                onPress={(event) => {
+                let newText = this.state.text.substring(
+                  0,
+                  this.state.text.length - 1,
+                );
+                this.setState({
+                  text: newText,
+                });
+              }}>
                     &larr;
                 </button>
             </div>
